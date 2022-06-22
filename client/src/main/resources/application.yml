@@ -1,0 +1,31 @@
+server:
+  port: 5000
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          client-authorization-code:
+            provider: server
+            client-id: client
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:5000/authorized"
+            scope: message.read,message.write
+            client-name: client-authorization-code
+          client-client-credentials:
+            provider: server
+            client-id: client
+            client-secret: secret
+            authorization-grant-type: client_credentials
+            scope: message.read,message.write
+            client-name: client-client-credentials
+        provider:
+          server:
+            issuer-uri: http://localhost:4000
+
+messages:
+  base-uri: http://127.0.0.1:8090/messages
