@@ -1,13 +1,14 @@
-package com.xhuicloud.auth.client;
+package com.xhuicloud.auth.server;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class App {
+public class ServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(ServerApplication.class, args);
     }
 
 }

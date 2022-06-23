@@ -35,16 +35,6 @@
                         <a href="/authorize?grant_type=client_credentials" th:href="@{/authorize?grant_type=client_credentials}"><span style="font-size:medium">Client Credentials</span></a>
                     </li>
                 </ul>
-                <div th:if="${messages}" class="panel-footer">
-                    <h4>Messages:</h4>
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr class="row" th:each="message : ${messages}">
-                                <td th:text="${message}">message</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
         <script src="/webjars/jquery/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
