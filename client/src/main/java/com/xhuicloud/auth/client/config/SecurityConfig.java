@@ -1,6 +1,7 @@
 package com.xhuicloud.auth.client.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
@@ -20,7 +21,9 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.cors().disable()
                 .authorizeRequests(authorizeRequests ->
-                        authorizeRequests.anyRequest().authenticated()
+                        authorizeRequests
+                                .mvcMatchers(HttpMethod.GET,"/authorized").anonymous()
+                                .anyRequest().authenticated()
                 )
                 // .oauth2Login(withDefaults())  如果是默认值，将选择一种认证方式，例如授权码,客户端~
                 .oauth2Login(oauth2Login ->
