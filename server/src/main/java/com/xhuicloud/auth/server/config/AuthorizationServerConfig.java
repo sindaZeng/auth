@@ -56,7 +56,6 @@ public class AuthorizationServerConfig {
                 .clientSecret("{noop}secret")
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-                .redirectUri("http://127.0.0.1:5000/login/oauth2/code/client-oidc")
                 .redirectUri("http://127.0.0.1:5000/authorized")
                 .scope(OidcScopes.OPENID)
                 .scope("message.read")

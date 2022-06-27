@@ -16,14 +16,6 @@ spring:
     oauth2:
       client:
         registration:
-          client-oidc:
-            provider: server
-            client-id: client
-            client-secret: secret
-            authorization-grant-type: authorization_code
-            redirect-uri: "http://127.0.0.1:5000/login/oauth2/code/{registrationId}"
-            scope: openid
-            client-name: client-oidc
           client-authorization-code:
             provider: server
             client-id: client
@@ -32,13 +24,6 @@ spring:
             redirect-uri: "http://127.0.0.1:5000/authorized"
             scope: message.read,message.write
             client-name: client-authorization-code
-          client-client-credentials:
-            provider: server
-            client-id: client
-            client-secret: secret
-            authorization-grant-type: client_credentials
-            scope: message.read,message.write
-            client-name: client-client-credentials
         provider:
           server:
-            issuer-uri: "http://127.0.0.1:4000"
+            issuer-uri: http://127.0.0.1:4000
