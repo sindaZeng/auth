@@ -15,7 +15,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .mvcMatchers(HttpMethod.GET,"/authorized")
                 .anonymous().anyRequest().authenticated().and().oauth2Client();
-                // .oauth2Login(withDefaults())  如果是默认值，将选择一种认证方式，例如授权码,客户端~
+//                 .oauth2Login(withDefaults())  如果是默认值，将选择一种认证方式，例如授权码,客户端~
 //                .oauth2Login(oauth2Login ->
 //                        oauth2Login.loginPage("/oauth2/authorization/client-oidc")) // 默认授权码
         return http.build();
